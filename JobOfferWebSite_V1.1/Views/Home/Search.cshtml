@@ -1,0 +1,31 @@
+﻿@model IEnumerable<JobOfferWebSite_V1._1.Models.Jobs>
+
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>Search</h2>
+
+<p>
+    @Html.ActionLink("Create New", "../Jobs/Create")
+</p>
+
+    <div class="panel panel-info">
+
+        <div class="panel-heading"><h2>نتائج البحث</h2></div>
+
+        <div class="row panel-body">
+            @foreach (var subItem in Model)
+            {
+            <div class="col-lg-3 thumbnail" style="margin-left:10px;margin-bottom:30px;height:380px;">
+                <img src="~/Uploads/@subItem.JobImage"  style="height:200px;width:250px;"/>
+                <h3>@Html.DisplayFor(modelItem => subItem.JobTitle)</h3>
+                <h5>@Html.Raw(HttpUtility.HtmlDecode(Html.DisplayFor(modelItem => subItem.JobContent).ToString()))</h5>
+                @Html.ActionLink("التفاصيل", "Details", new { jobId = subItem.Id }, new { @class = "btn btn-info" })
+
+            </div>
+            }
+        </div>
+    </div>
+

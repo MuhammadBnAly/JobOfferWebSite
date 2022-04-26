@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial scale=1" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Style.css" rel="stylesheet" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <!--NAvBar-->
+    <div>
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button class="navbar-toggle collapse" data-toggle="collapse" data-target="#navbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!--Logo-->
+                    <a href="~/Home/Index" class="navbar-brand">
+                        <img src="~/Images/JobToday_Logo.png" class="logo-size" />
+                    </a>
+
+                </div>
+                <!---->
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="~/Home/Index">
+                                <i class="glyphicon glyphicon-home">الرئيسية</i>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="~/Home/About">
+                                <i class=" 	glyphicon glyphicon-info-sign">حول الموقع</i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="~/Home/Contact">
+                                <i class="glyphicon glyphicon-envelope">اتصل بنا</i>
+                            </a>
+                        </li>
+
+                        <!--Search-->
+                        <li>
+                            @using (Html.BeginForm("Search", "Home", FormMethod.Post))
+                            {
+                                <input type="text" name="searchBar" id="searchBar" placeholder="ابحث هنا .. " />
+                            }
+                        </li>                        
+
+                    </ul>
+
+                    <!--Authentication Partial View-->
+                    
+                    @Html.Partial("_Login")
+                </div>
+            </div>
+        </nav>
+    </div>
+    
+    <!--Content-->
+    <div class="container">
+        <div class="row" style="min-height:350px;">
+            @RenderBody()
+        </div>
+    </div>
+    <!--Footer-->
+    <div>
+        <footer class="myFooter">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h3>
+                            <i class="glyphicon glyphicon-question-sign"></i>
+                            من نحن؟
+                        </h3>
+                        <p>
+                            مساء الخير ، موقغ صنايعى هيوصلك بوظائف متاحة وفرص عمل كتير للعمال فى مصر، مهما كانت مهاراتك، خبراتك أو مستوى تعليمك
+                        </p>
+                    </div>
+                    <div class="col-md-4">
+                        <h3>
+                            <i class="glyphicon glyphicon-globe"></i>
+                            روابط هامة
+                        </h3>
+                        <ul>
+                            <li><a href="#">وظائف للقطاع العام</a></li>
+                            <li><a href="#">وظائف للقطاع الخاص</a></li>
+                            <li><a href="#">وظائف خارج البلاد</a></li>
+                            <li><a href="#">وظائف متنوعة</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h3>
+                            <i class="glyphicon glyphicon-envelope"></i>
+                            تواصل معنا
+                        </h3>
+                        <ul>
+                            <li><a href="https://facebook.com/maashaaban">صفحتنا على الفيسبوك</a></li>
+                            <li><a href="https://twitter.com/maashaaban">تابعنا على تويتر</a></li>
+                            <li><a href="https://youtube.com/channel/UC8jVfXqcZ2MEFFP8jUlzaxQ">شاهدنا على اليوتيوب</a></li>
+                            <li><a href="~/Home/Contact">اترك لنا رسالة</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+            <!--copyright-->
+            <div class="subFooter">
+                <span>جميع الحقوق محفوظة لموقع صنايعى للتوظيف | 2021</span>
+            </div>
+        </footer>
+    </div>
+
+    <!--scripts-->
+    @RenderSection("scripts", required:false)
+    <script src="~/Scripts/jquery.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>

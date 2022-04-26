@@ -1,0 +1,108 @@
+body {
+    /*margin:0px;*/
+    padding-top: 100px;
+    font-family: myFont2;
+}
+
+@font-face {
+    font-family: myFont;
+    src: url('font/GE_SS_Two_Bold.otf')
+}
+
+@font-face {
+    font-family: myFont2;
+    src: url('font/DroidKufi-Regular.ttf')
+}
+
+.navbar-default {
+    /*    background-color:#820c54;*/
+    /*     background-color: #0c5c82; */
+    background-color: #031431;
+    border-color: #e7e7e7;
+}
+
+    .navbar-default .navbar-nav > li > a {
+        color: #e7e7e7;
+        font-family: myFont;
+    }
+
+        .navbar-default .navbar-nav > li > a:hover {
+            color: #fff;
+            font-family: myFont;
+        }
+
+.nav li {
+    position: relative;
+    display: block;
+    height: 70px;
+    padding-top: 10px;
+}
+
+.myFooter {
+    /*     background-color:cornflowerblue; */
+    background-color: #cde;
+    padding-top: 10px;
+    font-family: myFont;
+    text-align: justify;
+    /*margin-bottom:0px;*/
+}
+
+.subFooter {
+    /*     background-color: #0c5c82; */
+    background-color: #031431;
+    color: white;
+    padding: 10px;
+    font-family: myFont;
+    text-align: center;
+}
+
+.myFooter a {
+    /*     color: white; */
+}
+
+.myFooter h3, ul, p {
+    margin-bottom: 20px;
+    font-family: myFont2;
+    list-style-type: none;
+}
+
+.logo-size {
+    width: 70px;
+    height: 50px;
+    margin-top: -4px;
+}
+
+#searchBar {
+    width: 280px;
+    border: 2px solid #ccc;
+    border-radius: 50px;
+    /*background-image: url('../Images/icons8-search-128.png');*/ 
+    background-repeat: no-repeat;
+    background-position: 10px 10px;
+    padding: 5px 20px 10px 10px;
+    transition: width 0.5s ease-in-out;
+}
+
+#searchBar:focus {
+    width: 150%;
+}
+
+.img-size {
+    font-size: 80px;
+}
+
+.navbar-user {
+    padding: 10px;
+    padding-bottom: 0px;
+    width: 350px;
+}
+
+@media (min-width:992px){
+    .col-lg-3 {
+        width: 24%;
+    }
+}
+
+/*all-info:focus{
+    color:antiquewhite;
+}*/

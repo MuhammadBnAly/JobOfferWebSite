@@ -1,0 +1,51 @@
+﻿@model JobOfferWebSite_V1._1.Models.ApplyForJob
+
+@{
+    ViewBag.Title = "حذف الوظيفة";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>حذف الوظيفة</h2>
+
+<h3>هل أنت متأكد بالتراجع عن التقدم فى هذه الوظيفة ؟</h3>
+<div>
+    <h4>@*الرجوع عن التقدم للوظيفة*@ </h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            الوظيفة
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.jobs.JobTitle)
+        </dd>
+
+        <dt>
+            نص الرسالة
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Message)
+        </dd>
+
+        <dt>
+            تاريخ التقديم
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplyDate)
+        </dd>
+
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="حذف" class="btn btn-danger" /> |
+            @Html.ActionLink("العودة إلى القائمة", "GetJobsByUser")
+        </div>
+    }
+</div>

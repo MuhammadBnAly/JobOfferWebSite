@@ -1,0 +1,43 @@
+﻿@model IEnumerable<JobOfferWebSite_V1._1.Models.JobsViewModel>
+
+@{
+    ViewBag.Title = "GetJobsByPublisher";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>كل وظائف التى نشرت بواسطة <span style="color:firebrick">@User.Identity.Name</span></h2>
+
+<p>
+    <a href="../Jobs/Create" class="btn btn-success">إنشاء وظيفة جديدة</a>
+    @*@Html.ActionLink("إنشاء وظيفة جديدة", "../Jobs/Create")*@
+</p>
+
+@foreach (var gr in Model)
+{
+    @gr.JobTitle
+<table class="table table-bordered table-striped table-hover">
+    <tr>
+        <th>
+            اسم الباحث عن الوظيفة
+        </th>
+        <th>
+            نص الرسالة
+        </th>
+        <th>
+            تاريخ الإرسال
+        </th>
+    </tr>
+    @foreach (var item in gr.items)
+    {
+        <td>
+            @item.user.UserName
+        </td>
+        <td>
+            @item.Message
+        </td>
+        <td>
+            @item.ApplyDate
+        </td>
+    }
+</table>
+}
